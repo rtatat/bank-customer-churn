@@ -65,7 +65,7 @@ This report analyzes a Python code that builds and tunes a machine learning mode
 ### Results and Analysis
 - The code successfully trains and tunes the model.
 - The best model achieves a validation accuracy of 99.8799%
-![ACCURACY](Images/best_accuracy_99_879_percent.png)
+![ACCURACY](Images/best_accuracy_99_879_percent.PNG)
 - The top 3 model hyperparameter configurations and their corresponding accuracies are displayed.
 - The top 3 models are evaluated on the testing data, and all achieve similar accuracy around 0.9988.
 - The best model's hyperparameters are identified.
@@ -96,7 +96,7 @@ The Python code utilises a Random Forest Classifier to determine the most import
 - The Random Forest Classifier achieves an accuracy of 99.64% on the testing data.
 - The bar chart, titled "Feature Importance Map for Bank Churn Data - 10 Most Important Features", shows the relative importance of each feature for predicting customer churn.
 - The top 10 most important features for customer churn prediction are:
-![IMPORTANTFEATURES](Images/important_features_for_bank_churn_data.png)
+![IMPORTANTFEATURES](Images/important_features_for_bank_churn_data.PNG)
 
 #### Report 2 Conclusion
 The code successfully implements a Random Forest Classifier to identify the most important features for predicting customer churn. The results suggest that customers who complain, have a higher number of products, and are younger are more likely to churn. Additionally, factors like customer satisfaction and account activity are important for churn prediction.
