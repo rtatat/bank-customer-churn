@@ -97,7 +97,7 @@ The Python code utilises a Random Forest Classifier to determine the most import
 - The bar chart, titled "Feature Importance Map for Bank Churn Data - 10 Most Important Features", shows the relative importance of each feature for predicting customer churn.
 - The top 10 most important features for customer churn prediction are:
 
-![features](./Images/important_features_for_bank_churn_data.png)
+![features](./Images/important_features_for_bank_churn_data.PNG)
 
 #### Report 2 Conclusion
 The code successfully implements a Random Forest Classifier to identify the most important features for predicting customer churn. The results suggest that customers who complain, have a higher number of products, and are younger are more likely to churn. Additionally, factors like customer satisfaction and account activity are important for churn prediction.
