@@ -100,3 +100,29 @@ The Python code utilises a Random Forest Classifier to determine the most import
 
 #### Report 2 Conclusion
 The code successfully implements a Random Forest Classifier to identify the most important features for predicting customer churn. The results suggest that customers who complain, have a higher number of products, and are younger are more likely to churn. Additionally, factors like customer satisfaction and account activity are important for churn prediction.
+
+
+### Additional Method Information
+
+Project Title: Machine Learning Bank Customer Churn
+Introduction: Brief about the project
+
+	The purpose of this project is to determine the intended key factors that cause customer churn from bank institutions. Churn prevention will allow banks to develop loyalty programs and retain campaigns to keep as many customers as possible. Various factors was taken into account to find various factors that may cause customer churn in the banking industry. These include poor customer service, high fees, low interest rates, and even the age of the customer. Other factors may include credit score, estimated salary and whether a customer is an active member or not. 
+	Predicting customer churn involves analysing diverse customer data -transactions, demographics, activity, and interactions providing insights to uncovering predictive analytics through the use of machine learning. Different machine learning models have been developed throughout this project to unveil the patterns of hidden layers. Learning models such as Extreme Gradient Boosting model (XGBoost), Keras Tuner model, and Support Vector Classifier (SVC). Using these machine learning models, a predictive analysis can be made on what features are the most important and selecting the right hyperparameter for optimising deep learning models built with TensorFlow.
+	The data analysis comes into fruition when the primary goal is to determine an accurate machine-learning model that can predict churn based on the given factors. After strategies for customer retention can be made into the banking industry. 
+
+Objective: What the project aims to achieve
+
+	This project aims to achieve an accurate machine learning predictive model that can determine the churn of the customer and find the potential predictor feature that is suitable for the banking industry. Stated in the introduction, the primary objective of this project is to identify the main factors that cause customers to leave the bank for another competitor's service. These factors include tenure (number of years the customer has been with the bank), credit score, estimated salary, balance and age. Ultimately, the insights from this project could be used to help banks develop more efficient methods to keep customer retention from other banks and prevent customers from churning out. 
+
+Methods: Details about the methods and techniques used
+
+	Preparing the data was a simple task of determining which data would be used for the predictive analysis and which data would be removed and deemed unnecessary for the analysis. The data was fairly clean for this specific dataset, with very little data cleaning and handling missing values. Although there was very little data cleaning, encoding categorical data into numerical and finding the values of each column and finding the unique values were needed to get an accurate rating for each model. The most important columns that were consistently used throughout the project were the tenure, credit score, estimated salary, satisfaction score, and age. Each column was converted to numerical data, using dummies and bins to categorize the newly formatted numerical data. 
+	As for the models that were used throughout the project, TensorFlow, XGBoost, SVC, and Keras Tuner were all used and optimised to provide an accurate predictive model. Choosing a model for this project was a convoluted task that required critical thinking and analytical reasoning. Each model is tailored for a specific scenario to find an accurate predictive analysis. Tensor Flow is a deep learning framework that specializes in building and training neural networks. The XGBoost is a gradient-boosting framework, where the algorithm model primarily focuses on decision trees. XGBoost uses an ensemble of weak decision trees to create a powerful predictive model.
+	For Keras Tuner, the library of optimal sets of hyperparameters assisted in selecting the right hyperparameter for machine learning (Tensor Flow program). The hyperparameter remain the same throughout the machine learning training process and directly impacts the performance the predictive model. 
+	SVC is the supervised learning algorithm that can be used for both classification and regression tasks. For this project, SVC was primarily used for its flexibility and accuracy parameters that can be used to give an accurate predictive model. As for the kernel functions, the most common Radial Basis Function (RBF) kernel. 
+	In summary, the multiple machine learning models have different purposes for predicting the model accurately. Tensor Flow is mainly used to develop a deep learning framework that specialising in building and training neural networks. XGBoost is a boosting gradient that primarily focuses on decision trees from assembling weak decision trees. Keras Tuner helps optimise the machine learning programs. SVC was used for its flexibility and kernel tricks which allows high-accuracy predictive models. 
+
+	
+
+
