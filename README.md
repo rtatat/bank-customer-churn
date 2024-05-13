@@ -16,6 +16,12 @@ Analysis goal:
 1. How do factors such as tenure (number of years customer has been with bank), customer bank account balance, salary, credit score etc affect churn rate?
 2. How can we predict churn rate based on these factors?
 
+Acknowledgements:
+
+As we know, it is much more expensive to sign in a new client than keeping an existing one.
+
+It is advantageous for banks to know what leads a client towards the decision to leave the company. Churn prevention allows companies to develop loyalty programs and retention campaigns to keep as many customers as possible.
+
 ## About Dataset
 RowNumber—corresponds to the record (row) number and has no effect on the output.
 
@@ -53,21 +59,15 @@ Card Type—type of card hold by the customer.
 
 Points Earned—the points earned by the customer for using credit card.
 
-Acknowledgements:
-
-As we know, it is much more expensive to sign in a new client than keeping an existing one.
-
-It is advantageous for banks to know what leads a client towards the decision to leave the company. Churn prevention allows companies to develop loyalty programs and retention campaigns to keep as many customers as possible.
-
 ## Objective: What the project aims to achieve
 
-This project aims to achieve an accurate machine learning predictive model that can determine the churn of the customer and find the potential predictor feature that is suitable for the banking industry. Stated in the introduction, the primary objective of this project is to identify the main factors that cause customers to leave the bank for another competitor's service. These factors include tenure (number of years the customer has been with the bank), credit score, estimated salary, balance and age. Ultimately, the insights from this project could be used to help banks develop more efficient methods to keep customer retention from other banks and prevent customers from churning out. 
+This project aims to achieve an accurate machine learning predictive model that can determine the churn of the customer and find the potential predictor feature that is suitable for the banking industry. Stated in the introduction, the primary objective of this project is to identify the main factors that cause customers to leave the bank for another competitor's service. These factors include tenure (number of years the customer has been with the bank), credit score, estimated salary, balance and age. Ultimately, the insights from this project could be used to help banks develop more efficient methods to keep customer retention from other banks and prevent customers from churning out.
 
 ## Methods: Details about the methods and techniques used
 
 The CSV data from kaggle was converted to 'data.db' for storage using SQLite in the 'CSVtoSQL.ipynb' script. Each analysis script first loads the db file in before converting it to a pandas DataFrame for analysis.
 
-Preparing the data was a simple task of determining which data would be used for the predictive analysis and which data would be removed and deemed unnecessary for the analysis. The data was fairly clean for this specific dataset, with very little data cleaning and handling missing values. Although there was very little data cleaning, encoding categorical data into numerical and finding the values of each column and finding the unique values were needed to get an accurate rating for each model. The most important columns that were consistently used throughout the project were the tenure, credit score, estimated salary, satisfaction score, and age. Each column was converted to numerical data, using dummies and bins to categorize the newly formatted numerical data. 
+Preparing the data was a simple task of determining which data would be used for the predictive analysis and which data would be removed and deemed unnecessary for the analysis. The data was fairly clean for this specific dataset, with very little data cleaning and handling missing values. Although there was very little data cleaning, encoding categorical data into numerical and finding the values of each column and finding the unique values were needed to get an accurate rating for each model. The most important columns that were consistently used throughout the project were the tenure, credit score, estimated salary, satisfaction score, and age. Each column was converted to numerical data, using dummies and bins to categorize the newly formatted numerical data.
 
 As for the models that were used throughout the project, TensorFlow, XGBoost, SVC, and Keras Tuner were all used and optimised to provide an accurate predictive model. Choosing a model for this project was a convoluted task that required critical thinking and analytical reasoning. Each model is tailored for a specific scenario to find an accurate predictive analysis. Tensor Flow is a deep learning framework that specializes in building and training neural networks. The XGBoost is a gradient-boosting framework, where the algorithm model primarily focuses on decision trees. XGBoost uses an ensemble of weak decision trees to create a powerful predictive model.
 
@@ -144,7 +144,11 @@ The accuracy for this model was 99.90%
 - The top 10 most important features for customer churn prediction are:
 ![IMPORTANTFEATURES](Images/important_features_for_bank_churn_data.PNG)
 
-![IMPORTANTFEATURES2](XGBoost_feature_importance.png)
+- XGBoost also has the ability to discern feature importance and the top 10 most important features in this model was:
+![IMPORTANTFEATURES2](Images/XGBoost_feature_importance.png)
+
+As can be seen, Customer churn is highly predictable via it's complain feature (where the customer has put in a complaint previously). It is likely that this is why the accuracy of all models used were extremely high.
+Number of products was second for both feature importance analyses.
 
 ## Findings
 
