@@ -79,20 +79,20 @@ In summary, the multiple machine learning models have different purposes for pre
 
 ## Analysis
 
-### TensorFlow
-
-### Keras Tuner
-This report analyzes a Python code that builds and tunes a machine learning model to predict customer churn. The code utilizes KerasTuner for hyperparameter optimization and achieves a high accuracy rate.
-
-### Data Preprocessing
-- The code imports necessary libraries including pandas, scikit-learn, TensorFlow, and KerasTuner.
-- It establishes a connection to a SQLite database named "data.db" and reads the "data" table into a pandas dataframe named "churn_data".
+### Data Preprocessing (for all models)
+- Establishes a connection to a SQLite database named "data.db" and reads the "data" table into a pandas dataframe named "churn_data".
 - Non-essential columns like "RowNumber", "CustomerId", "Surname", and "Geography" are dropped from the dataframe.
 - Credit score, estimated salary, balance, and age are binned into categories to improve model performance.
 - Categorical data is converted to numerical using one-hot encoding with pd.get_dummies.
 - The data is then split into features (X) and target variable (y) representing churn (Exited).
 - Training and testing datasets are created using train_test_split.
 - A StandardScaler instance is used to normalize the training data, and the scaler is then applied to both training and testing sets.
+
+### TensorFlow
+
+
+### Keras Tuner
+Keras Tuner is a hyperparameter tuning library for TensorFlow. This package automates tuning for our neural network model in an attempt to search for the best set of parameters for the machine learning model.
 
 ### Model Building and Tuning with KerasTuner
 - A function create_model is defined to build a sequential neural network model with hyperparameter options.
@@ -114,31 +114,22 @@ This report analyzes a Python code that builds and tunes a machine learning mode
 - Finally, the best model is evaluated again on the full testing data, achieving a loss of 0.3142 and an accuracy of 99.88%
  
 ### Support Vector Classifer
+SVC attempts to model a hyperplane that separates the classes (in this case binary classes) in feature space with the largest margin (distance between the hyperplane and the closest data point). It is commonly used for binary classification tasks and is well suited for this project.
+They are also resistant to overfitting via its support vectors which may assist in this scenario.
+This model produced an accuracy of 99.72%
+
 ### XGBoost (Gradient Boosting Model)
+XGBoost (Extreme Gradient Boosting) is a type of boosting algorithm, these are machine learning models that combine multiple weak learning models such as decision trees into a sequential system. Each weak learning model corrects errors made be the previous one.
+This makes XGBoost effective at binary classification and is well suited for this project.
+XGBoost is also capable of determining feature importance which provided an opportunity to verify the feature importance results conducted alongside our initial neural network.
+This model produced an accuracy of 99.90%.
 
-### Feature Importance
-The Python code utilises a Random Forest Classifier to determine the most important features for churn prediction
-
-#### Data Preprocessing
-- The code imports necessary libraries including pandas, scikit-learn, TensorFlow, and Matplotlib.
-- It establishes a connection to a SQLite database named "data.db" and reads the "data" table into a pandas dataframe named "churn_data".
-- Non-essential columns like "RowNumber", "CustomerId", "Surname", and "Geography" are dropped from the dataframe.
-- Credit score, estimated salary, balance, and age are binned into categories.
-- Categorical data is converted to numerical using one-hot encoding with pd.get_dummies.
-- The data is then split into features (X) and target variable (y) representing churn (Exited).
-- Training and testing datasets are created using train_test_split.
-- A StandardScaler instance is used to normalize the training data, and the scaler is then applied to both training and testing sets.
-
-#### Model Building and Feature Importance
+#### Feature Importance
 - A Random Forest Classifier (rf) is created and fit to the training data (X, y).
 - The feature importances are retrieved from the rf model using rf.feature_importances_.
 - A pandas dataframe named "feature_importance_df" is created to store feature names and importances.
 - The dataframe is sorted by feature importance in descending order and the top 10 most important features are selected for visualization.
 - A bar chart is created to visualize the importance of the top 10 features for customer churn prediction.
-
-#### Results and Analysis
-- The Random Forest Classifier achieves an accuracy of 99.64% on the testing data.
-- The bar chart, titled "Feature Importance Map for Bank Churn Data - 10 Most Important Features", shows the relative importance of each feature for predicting customer churn.
 - The top 10 most important features for customer churn prediction are:
 ![IMPORTANTFEATURES](Images/important_features_for_bank_churn_data.PNG)
 
