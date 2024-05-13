@@ -89,6 +89,14 @@ In summary, the multiple machine learning models have different purposes for pre
 - A StandardScaler instance is used to normalize the training data, and the scaler is then applied to both training and testing sets.
 
 ### TensorFlow
+With TensorFlow we needed a basis model to start with so we can use what we found later in the project. This allowed us to fine-tune other models and move on to XGBoost, Keras Tuner and SVC which is the Support Vector Machine. We used TensorFlow primarily to develop a deep-learning framework that specialises in predicting models. The TensorFlow uses the Sequential and the sigmoid output layer to get an accurate rating of 99.64%.
+-TensorFlow was used to get a baseline understanding of what we needed to create other predictive models more accurately. 
+-Hidden Layer 1: 9 Nodes, RELU Activation
+-Hidden Layer 2: 19 Nodes, RELU
+-Activation
+-Sigmoid Output Layer
+-100 Epochs
+-99.64% Accurate, 0.06 Loss
 
 
 ### Keras Tuner
