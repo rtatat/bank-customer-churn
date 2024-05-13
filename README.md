@@ -100,19 +100,19 @@ With TensorFlow we needed a basis model to start with so we can use what we foun
 
 
 ### Keras Tuner
-Keras Tuner is a hyperparameter tuning library for TensorFlow. This package automates tuning for our neural network model in an attempt to search for the best set of parameters for the machine learning model.
-
-### Model Building and Tuning with KerasTuner
-- A function create_model is defined to build a sequential neural network model with hyperparameter options.
-- KerasTuner is used to search for the best combination of hyperparameters including:
+A function create_model is defined to build a sequential neural network model with hyperparameter options.
+KerasTuner is used to search for the best combination of hyperparameters including:
     * Activation function (relu, tanh, sigmoid)
     * Number of neurons in the first hidden layer
     * Number of hidden layers (1 to 5)
     * Number of neurons in each hidden layer
-- A RandomSearch tuner is used with 10 trials and the validation accuracy is tracked during the search process.
-- A custom callback AccuracyLogger is implemented to record validation accuracy after each epoch.
+A RandomSearch tuner is used with 10 trials and the validation accuracy is tracked during the search process.
+A custom callback AccuracyLogger is implemented to record validation accuracy after each epoch.
 
-### Results and Analysis
+The best performing model had a tanh activation with 91 nodes in the input layer and an additional 4 hidden layers with 1 node each.
+
+This best model was 99.88% accurate.
+
 - The code successfully trains and tunes the model.
 - The best model achieves a validation accuracy of 99.8799%
 ![ACCURACY](Images/best_accuracy_99_879_percent.PNG)
@@ -122,17 +122,20 @@ Keras Tuner is a hyperparameter tuning library for TensorFlow. This package auto
 - Finally, the best model is evaluated again on the full testing data, achieving a loss of 0.3142 and an accuracy of 99.88%
  
 ### Support Vector Classifer
-SVC attempts to model a hyperplane that separates the classes (in this case binary classes) in feature space with the largest margin (distance between the hyperplane and the closest data point). It is commonly used for binary classification tasks and is well suited for this project.
-They are also resistant to overfitting via its support vectors which may assist in this scenario.
-This model produced an accuracy of 99.72%
+Support Vector Classifier is a type of Support Vector Machine which are commonly used for binary classification tasks and is well suited for this project.
+SVC attempts to model a hyperplane that separates the classes (in this case binary classes) in feature space with the largest margin (distance between the hyperplane and the closest data point).
+SVC is resistant to overfitting via its support vectors which may assist in this scenario.
+
+The accuracy for this model was 99.72%.
 
 ### XGBoost (Gradient Boosting Model)
-XGBoost (Extreme Gradient Boosting) is a type of boosting algorithm, these are machine learning models that combine multiple weak learning models such as decision trees into a sequential system. Each weak learning model corrects errors made be the previous one.
-This makes XGBoost effective at binary classification and is well suited for this project.
+XGBoost, also known as Extreme Gradient Boosting, is a type of boosting algorithm. These are machine learning models that combine multiple weak learning models such as decision trees into a sequential system. Each weak learning model corrects errors made by the previous one.
+This makes these XGBoost effective at binary classification.
 XGBoost is also capable of determining feature importance which provided an opportunity to verify the feature importance results conducted alongside our initial neural network.
-This model produced an accuracy of 99.90%.
 
-#### Feature Importance
+The accuracy for this model was 99.90%
+
+### Feature Importance
 - A Random Forest Classifier (rf) is created and fit to the training data (X, y).
 - The feature importances are retrieved from the rf model using rf.feature_importances_.
 - A pandas dataframe named "feature_importance_df" is created to store feature names and importances.
@@ -141,6 +144,7 @@ This model produced an accuracy of 99.90%.
 - The top 10 most important features for customer churn prediction are:
 ![IMPORTANTFEATURES](Images/important_features_for_bank_churn_data.PNG)
 
+![IMPORTANTFEATURES2](XGBoost_feature_importance.png)
 
 ## Findings
 
