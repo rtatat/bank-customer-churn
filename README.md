@@ -113,13 +113,11 @@ The best performing model had a tanh activation with 91 nodes in the input layer
 
 This best model was 99.88% accurate.
 
-- The code successfully trains and tunes the model.
-- The best model achieves a validation accuracy of 99.8799%
+A callback function was used to track the accuracy of each epoch as a visualisation of keras tuner over time. It is interesting to note that for each set of hyperparameters keras tuner had chosen, it would either be highly accurate at around 99% or mediocre at around 80%.
 ![ACCURACY](Images/best_accuracy_99_879_percent.PNG)
 - The top 3 model hyperparameter configurations and their corresponding accuracies are displayed.
 - The top 3 models are evaluated on the testing data, and all achieve similar accuracy around 0.9988.
 - The best model's hyperparameters are identified.
-- Finally, the best model is evaluated again on the full testing data, achieving a loss of 0.3142 and an accuracy of 99.88%
  
 ### Support Vector Classifer
 Support Vector Classifier is a type of Support Vector Machine which are commonly used for binary classification tasks and is well suited for this project.
